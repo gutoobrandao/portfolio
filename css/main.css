@@ -74,13 +74,13 @@ li {
   --cor-preta: hsl(0, 0%, 0%);
   --cor-borda: hsl(0, 0%, 91%);
   --cor-texto: hsl(240, 6%, 10%);
-  --hero-mega: hsl(318, 22%, 27%);
-  --hero-shopee: hsl(10, 84%, 55%);
-  --hero-hsl-rm: hsl(249, 61%, 37%);
-  --hero-hsl-100: hsl(44, 48%, 85%);
-  --hero-hsl-iep: hsl(191, 64%, 85%);
-  --hero-googlemi: hsl(45, 97%, 50%);
-  --hero-gestao-projeto: hsl(167, 60%, 67%);
+  --mega: hsl(318, 22%, 27%);
+  --shopee: hsl(10, 84%, 55%);
+  --hsl-rm: hsl(249, 61%, 37%);
+  --hsl-100: hsl(44, 48%, 85%);
+  --hsl-iep: hsl(191, 64%, 85%);
+  --googlemi: hsl(45, 97%, 50%);
+  --gestao-projeto: hsl(167, 60%, 67%);
 
   --sombra: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 
@@ -135,15 +135,6 @@ li {
   font: var(--legenda);
 }
 
-figcaption, .legendas {
-  font: var(--legenda);
-}
-
-ul,
-ol {
-  margin: var(--medida-7);
-}
-
 a {
   color: var(--cor-texto);
 }
@@ -151,6 +142,7 @@ a {
 .grid {
   display: grid;
   grid-template-columns: [tela-cheia-start] minmax(1rem, 1fr) [conteudo-start] min((100% - 2rem), 900px) [conteudo-end] minmax(1rem, 1fr) [tela-cheia-start];
+  row-gap: var(--medida-10);
 }
 
 .grid > :not(.tela-cheia),
@@ -303,3 +295,118 @@ footer {
   height: var(--medida-7);
 }
 
+/*  Projetos Hero  */
+
+.hero-projetos {
+  display: grid;
+  row-gap: var(--medida-5);
+  padding: var(--medida-5) 0;
+}
+
+.breadcrumb li {
+  display: inline;
+}
+
+.breadcrumb li+li:before {
+  padding: var(--medida-2);
+  content: "/\00a0";
+}
+
+.breadcrumb li a {
+  font: var(--h6);
+  text-decoration: none;
+}
+
+.breadcrumb li a:hover {
+  text-decoration: underline;
+}
+
+.mega {
+  background-color: var(--mega);
+}
+
+.shopee {
+  background-color: var(--shopee);
+}
+
+.hsl-100 {
+  background-color: var(--hsl-100);
+}
+
+.hsl-rm {
+  background-color: var(--hsl-rm);
+}
+
+.hsl-iep {
+  background-color: var(--hsl-iep);
+}
+
+.google-mi {
+  background-color: var(--googlemi);
+}
+
+.gestao-projeto {
+  background-color: var(--gestao-projeto);
+}
+
+.texto-branco * {
+  color: var(--cor-branca);
+}
+
+/*  Projetos Artigo */
+
+article > ul,
+article > ol {
+  margin: var(--medida-7);
+}
+
+.destaque-projetos {
+  padding: var(--medida-10);
+  text-align: center;
+}
+
+article > .btn {
+  margin: var(--medida-7) auto;
+}
+
+.img,
+.img-proposta {
+  width: 100%;
+  margin: var(--medida-7) 0;
+  border-radius: var(--medida-3);
+}
+
+figure {
+  overflow: auto;
+  max-width: 100%;
+  margin: var(--medida-7) auto;
+}
+figure > img {
+  max-width: none;
+  max-height: 505px;
+}
+
+/*  Projetos Nav Inferior */
+
+.nav-inferior {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--medida-5);
+}
+
+.nav-inferior-item {
+  border-radius: 1rem;
+  text-decoration: none;
+  overflow: hidden;
+  padding: var(--medida-8);
+}
+
+.nav-inferior-item:hover {
+  transition: 0.25s ease-in-out;
+  box-shadow: var(--sombra);
+  transform: translateY(-10px);
+}
+
+.nav-inferior .proximo {
+  text-align: right;
+}
